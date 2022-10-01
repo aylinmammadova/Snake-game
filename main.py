@@ -29,7 +29,7 @@ game_is_on = True
 while game_is_on:
     screen.update()
     # slowing down
-    time.sleep(0.1)
+    time.sleep(0.15)
     snake.move()
 
     # # Detecting collision with food
@@ -43,6 +43,7 @@ while game_is_on:
         score.reset()
         snake.reset()
 
+    # # Detecting collision with snake body
     for segment in snake.segments[1:]:
         if snake.head.distance(segment) < 10:
             score.reset()
